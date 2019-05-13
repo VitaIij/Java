@@ -1,0 +1,31 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1>Chat</h1>
+  </div>
+  <div style="width:400px; height: 400px; border: solid black 1px; margin:auto; margin-top: 10px;">
+      <div *ngFor="let message of messages | async" style="background: rgba(0,0,0,0.1);">
+        <p><b>{{message.username}}</b> <i>{{message.time}}</i></p>
+        <p>{{message.text}}</p>
+        <button (click)="deleteMessage(message.id)">Delete</button>
+      </div>
+  </div>
+</div>
+<div style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <input type="text" class="form-control" id="text" required [(ngModel)]="message.text" name="text">
+    </div>
+
+    <button type="submit" class="btn btn-success">Send</button>
+  </form>
+</div>
+<!--<div style="width:400px; height: 400px; border: solid black 1px; margin:auto; margin-top: 10px;">-->
+
+<!--</div>-->
+<!--<form>-->
+<!--  <mat-form-field class="example-full-width">-->
+<!--    <input matInput placeholder="message">-->
+<!--  </mat-form-field>-->
+<!--  <button mat-button>Send</button>-->
+<!--</form>-->

@@ -1,0 +1,16 @@
+<h3>Create Employee</h3>
+<!--<div &lt;!&ndash;[hidden]="submitted"&ndash;&gt; style="width: 400px;">-->
+<div style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <input type="text" class="form-control" id="text" required [(ngModel)]="message.text" name="text">
+    </div>
+
+    <button type="submit" class="btn btn-success">Send</button>
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h4>You sent successfully!</h4>
+</div>
